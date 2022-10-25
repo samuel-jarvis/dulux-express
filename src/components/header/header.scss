@@ -1,0 +1,29 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 10rem;
+  padding-top: 20rem;
+  background-blend-mode: overlay;
+  background: linear-gradient(0deg, rgba(0, 58, 73, 0.678), rgba(0, 58, 73, 0.514)), url("../../assets/header.jpg");
+
+  .header__content {
+    font-size: 5.2rem;
+    color: white;
+    font-weight: 500;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 4rem 3rem;
+    padding-top: 15rem;
+  }
+
+}

@@ -1,0 +1,14 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+
+.details__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15rem;
+
+  @media screen and (max-width: 868px) {
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+  }
+}

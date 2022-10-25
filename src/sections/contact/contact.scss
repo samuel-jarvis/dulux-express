@@ -1,0 +1,15 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+
+.contact {
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 59, 73, 0.969), rgba(0, 58, 73, 0.834)), url("../../assets/world.png");
+  background-size: cover; 
+  color: white !important;
+}
+
+.button {
+  @include button;
+  background-color: $orange;
+}

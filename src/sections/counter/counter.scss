@@ -1,0 +1,40 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+.counter__section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  text-align: center;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+  }
+
+  &__card {
+    &__count {
+      font-size: 6rem;
+      font-weight: 500;
+      color: $blue;
+
+      // ::before 
+      // ::after
+      &::after {
+        content: "+";
+        font-size: 3rem;
+        color: $orange;
+      }
+    }
+    &__title {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 1rem 0;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+.footer {
+  background-color: $white-bg;
+  padding-bottom: 4rem;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  font-size: 1.6rem;
+
+  @media screen and (max-width: 868px) {
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  &__heading {
+    font-weight: 500;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: $blue;
+  }
+
+  a {
+    color: $blue;
+    font-weight: 500;
+    padding-left: .5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 8rem;
+  font-size: 1.6rem;
+  border-top: 1px solid $blue;
+  padding-top: 4rem;
+}
