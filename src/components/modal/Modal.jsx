@@ -23,7 +23,13 @@ const Modal = ({ handleModal, data, error }) => {
               {data.shipping.map(item =>
                 <div className="data__item">
                   <GrFormLocation className='item__icon' />
-                  <p className='locations'>{item}</p>
+                  <div className="item__info">
+                    <p className='locations'>{item.location}</p>
+                    {/* new date from time */}
+                    <p className='date'>{new Date(item.time.seconds).toDateString()}</p>
+                    {/* <p className='date'>{(new Date(timestamp.toDate())).toDateString()}</p> */}
+                    {/* <p className='time'>{item.time}</p> */}
+                  </div>
                 </div>
               )}
             </>

@@ -60,7 +60,7 @@
   .data__item {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   h2 {
@@ -68,6 +68,11 @@
   }
 
   .locations {
+    color: black;
+    font-weight: bold;
+  }
+
+  .time {
     color: $blue;
     font-weight: 500;
   }

@@ -26,6 +26,7 @@ const Track = ({ handleModal, setData, setError, setLoading }) => {
           }))
 
           const tracking = data.find(item => item.id === trackingID)
+          console.log(tracking)
           if (tracking) {
             setData(tracking)
             handleModal()
