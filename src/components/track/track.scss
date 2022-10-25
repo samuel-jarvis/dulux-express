@@ -31,6 +31,7 @@
     width: 100%;
     min-width: 0;
   }
+
   // border: 5px solid $blue;
 }
 
@@ -55,8 +56,19 @@
 
     &:hover {
       background-color: $blue;
-      color: $orange;
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 868px) {
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      margin: auto;
+      text-align: center;
     }
   }
 }
-

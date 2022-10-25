@@ -11,8 +11,8 @@ const Contact = () => {
       <p className='subheading'>
         Dulux Express is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade.
       </p>
-      <a href="/" className='button'>
-        <button className="btn">Contact Us</button>
+      <a href="/contact" className='button'>
+        Contact Us
       </a>
     </div>
   )
