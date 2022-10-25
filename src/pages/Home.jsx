@@ -5,8 +5,8 @@ import Counter from '../sections/counter/Counter'
 import Details from '../sections/details/Details'
 import Hero from '../sections/hero/Hero'
 import Services from '../sections/services/Services'
-import { projectFirestore } from '../firebase/config'
-import { useState, useEffect } from 'react'
+// import { projectFirestore } from '../firebase/config'
+import { useState } from 'react'
 import Modal from '../components/modal/Modal'
 
 

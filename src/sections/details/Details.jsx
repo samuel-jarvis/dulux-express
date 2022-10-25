@@ -1,6 +1,6 @@
 import React from 'react'
 import "./details.scss"
-import Image from "../../assets/details.png"
+// import Image from "../../assets/details.png"
 
 const Details = ({ text }) => {
   return (
