@@ -1,6 +1,5 @@
-@import "../../sass/_variables.scss";
-@import "../../sass/_mixin.scss";
-
+@import '../../sass/_variables.scss';
+@import '../../sass/_mixin.scss';
 
 .modal {
   position: fixed;
@@ -22,6 +21,7 @@
     opacity: 1;
     visibility: visible;
   }
+
   .modal-content {
     width: 100%;
     max-width: 500px;
@@ -30,7 +30,6 @@
     position: relative;
     padding: 1.5rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-
 
     .close {
       position: absolute;
@@ -43,6 +42,7 @@
       color: $orange;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+
       &:hover {
         color: $blue;
       }
@@ -50,16 +50,21 @@
   }
 
   .data__heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    border-bottom: 1px solid $blue;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
+  .data__details {
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    border-bottom: 1px solid $blue;
+    padding-bottom: 0.5rem;
+  }
 
   .data__item {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 1.5rem;
   }
 
@@ -80,18 +85,16 @@
   .item__icon {
     font-size: 1.6rem;
     color: grey;
-    margin-right: .8rem;
+    margin-right: 0.8rem;
 
     // after vertical line
     &::after {
-      content: "";
+      content: '';
       display: inline-block;
       width: 1px;
       height: 1.5rem;
       background-color: grey;
       margin: 0 1rem;
     }
-    
-
   }
 }

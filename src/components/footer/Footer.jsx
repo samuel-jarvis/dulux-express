@@ -20,11 +20,11 @@ const Footer = () => {
           </h1>
           <p>
             Address:
-            <span className="orange"> 1234 Street Name, City Name, United States</span>
+            <span className="orange"> 13600 SW 288th St, Homestead, FL 33033</span>
           </p>
           <p>
             Phone:
-            <span className="orange"> +1 234 567 890</span>
+            <span className="orange"> +1 (862) 397‑6064</span>
           </p>
           <p>
             Email:
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       <p className='copyright'>
-      Copyright © 2021 Dulux Express. All Rights Reserved.
+        Copyright © 2021 Dulux Express. All Rights Reserved.
       </p>
     </div>
   )

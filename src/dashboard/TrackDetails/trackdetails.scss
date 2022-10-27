@@ -1,0 +1,87 @@
+@import "../../sass/_variables.scss";
+@import "../../sass/_mixin.scss";
+
+
+.trackingPage {
+  background-color: $white-bg;
+}
+
+.form {
+  text-align: center;
+  margin: auto;
+
+  input {
+    height: 50px;
+    border: 1px solid $orange;
+    padding: 0 20px;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    height: 50px;
+    border: 1px solid $orange;
+    padding: 0 18px;
+    font-size: 1.6rem;
+    background-color: $orange;
+    color: $white-bg;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 868px) {
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+.tracking-list {
+  padding: 4rem 2rem;
+  border: 1px solid bisque;
+  box-shadow: 5px 6px 30px 0px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 4rem auto;
+
+  .id__edit {
+    margin-bottom: 2rem;
+  }
+
+  .head {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tracking {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      list-style-type: disc;
+      border-bottom: 1px solid bisque;
+      padding-bottom: 1rem;
+      cursor: pointer;
+      color: blue;
+    }
+
+    .delete-icon {
+      color: $orange;
+      cursor: pointer;
+      font-size: 1.8rem;
+    }
+  }
+}

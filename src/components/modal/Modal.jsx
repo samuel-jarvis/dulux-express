@@ -19,16 +19,14 @@ const Modal = ({ handleModal, data, error }) => {
             <>
               <h2>Standard Shipping</h2>
               <p className='data__heading'>Tracking ID: {data.id}</p>
+              <p className='data__details'>Delivery Details: {data.trackingInfo}</p>
 
               {data.shipping.map(item =>
                 <div className="data__item">
                   <GrFormLocation className='item__icon' />
-                  <div className="item__info">
+                  <div className="">
                     <p className='locations'>{item.location}</p>
-                    {/* new date from time */}
-                    <p className='date'>{new Date(item.time.seconds).toDateString()}</p>
-                    {/* <p className='date'>{(new Date(timestamp.toDate())).toDateString()}</p> */}
-                    {/* <p className='time'>{item.time}</p> */}
+                    <p className='time'>{item.time}</p>
                   </div>
                 </div>
               )}

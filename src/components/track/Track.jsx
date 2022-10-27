@@ -1,7 +1,8 @@
 import React from 'react'
 import "./track.scss"
 import { useState } from 'react'
-import { projectFirestore } from '../../firebase/config'
+import { db } from "../../firebase/config";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const Track = ({ handleModal, setData, setError, setLoading }) => {
   const [trackingID, setTrackingID] = useState("")
@@ -14,7 +15,9 @@ const Track = ({ handleModal, setData, setError, setLoading }) => {
 
     const fetchData = async () => {
       try {
-        const res = await projectFirestore.collection('tracking').get()
+        const q = query(collection(db, "tracking"));
+
+        const res = await getDocs(q);
 
         if (res.empty) {
           setError('Sorry, we couldn\'t find that tracking number. Please try again.')

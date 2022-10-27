@@ -20,7 +20,7 @@ const counterList = [
   {
     id: 4,
     title: "Warehouses Managed",
-    count: 100,
+    count: 500,
   }
 ]
 
