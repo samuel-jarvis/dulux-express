@@ -4,7 +4,9 @@ import { db } from '../../firebase/config';
 import { useState, useEffect } from 'react';
 import './trackdetails.scss';
 import { Link } from 'react-router-dom';
-import { collection, query, getDocs, doc, setDoc, deleteDoc, onSnapshot } from 'firebase/firestore';
+import { collection, query, doc, setDoc, onSnapshot } from 'firebase/firestore';
+
+
 
 const TrackDetails = () => {
   const params = useParams();
@@ -61,11 +63,28 @@ const TrackDetails = () => {
     setLocation('');
   };
 
+  const deleteLastItem = async () => {
+    // prompt user to confirm delete
+    const confirm = window.confirm('Are you sure you want to delete this tracking number?');
+    if (confirm) {
+      // delete from firestore
+      console.log(id);
+      const ref = doc(db, 'tracking', id);
+      // remove the last item from shipping array
+      const shipping = trackingData.shipping;
+      shipping.pop();
+      await setDoc(ref, {
+        shipping
+      });
+    }
+  };
+  
+
   return (
     <div className="trackingPage padding">
       <h1 className="heading">ADMIN: Add Data for ID </h1>
 
-      <Link to="/tracking">Back to Tracking</Link>
+      <Link className="back_link" to="/tracking">Back to Tracking</Link>
 
       <div className="tracking-list">
         {trackingData && (
@@ -94,27 +113,38 @@ const TrackDetails = () => {
           </>
         )}
 
-        {/* add input for time and location */}
-        <div className="add__tracking__details">
-          <form>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Location"
-            />
-            <input
-              type="datetime-local"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              placeholder="Time"
-            />
-            <button onClick={(e) => addData(e)}>Add</button>
-          </form>
-        </div>
+
+      <div className='delete_last'>
+        <p onClick={() => deleteLastItem()}>
+          Delete Last Item
+        </p>
       </div>
+
+      {/* add input for time and location */}
+      <div className="add__tracking__details">
+        <form>
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Location"
+          />
+          <input
+            type="datetime-local"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            placeholder="Time"
+          />
+          <button onClick={(e) => addData(e)}>Add</button>
+        </form>
+      </div>
+      
     </div>
-  );
+  </div >
+);
 };
 
 export default TrackDetails;
+
+
+

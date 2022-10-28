@@ -9,12 +9,11 @@ import Contact from './pages/Contact';
 import Tracking from './dashboard/Tracking/Tracking';
 import TrackDetails from './dashboard/TrackDetails/TrackDetails';
 import Login from './dashboard/Login/Login';
-import { useEffect } from 'react';
 
 import { useAuthContext } from './context/useAuthContext';
 
 const App = () => {
-	const { user, authState } = useAuthContext();
+	const { user } = useAuthContext();
 
 	return (
 		<Router>

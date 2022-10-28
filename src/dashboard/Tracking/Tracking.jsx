@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react'
 import {FaTimes} from 'react-icons/fa';
 import { db } from "../../firebase/config";
 import { Link } from 'react-router-dom';
-import { collection, query, getDocs, doc, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
-import { useAuthContext } from '../../context/useAuthContext';
+import { collection, query, doc, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 
 const Tracking = () => {
-  const {user, authState} = useAuthContext()
 
   const [trackingList, setTrackingList] = useState([])
   const [error, setError] = useState("")
@@ -66,7 +64,6 @@ const Tracking = () => {
     }
   }
 
-
   return (
     <div className='trackingPage padding'>
       <h1 className="heading">Dashboard: Add Tracking ID </h1>
@@ -95,7 +92,7 @@ const Tracking = () => {
         {trackingList &&
           trackingList.map((tracking) => (
             <div className="tracking" key={tracking.id}>
-              <Link to={`/tracking-details/${tracking.id}`}>
+              <Link to={`/admin/tracking-details/${tracking.id}`}>
                 <p>{tracking.id}</p>
               </Link>
               <FaTimes onClick={() => deleteTracking(tracking.id)} className="delete-icon" />

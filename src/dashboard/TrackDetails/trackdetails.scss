@@ -85,3 +85,19 @@
     }
   }
 }
+
+.delete_last {
+  margin-top: 4rem;
+  text-align: right;
+  font-size: 1.6rem;
+  color: $blue;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.back_link {
+  font-size: 1.4rem;
+}
