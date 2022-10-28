@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       <p className='copyright'>
-        Copyright © 2021 Dulux Express. All Rights Reserved.
+        Copyright © 2022 Dulux Express. All Rights Reserved.
       </p>
     </div>
   )
