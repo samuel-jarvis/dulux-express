@@ -5,7 +5,7 @@ const counterList = [
   {
     id: 1,
     title: "Countries Covered",
-    count: 20,
+    count: 40,
   },
   {
     id: 2,
