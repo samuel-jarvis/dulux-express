@@ -1,7 +1,7 @@
 import React from 'react'
 import "./tracking.scss"
 import { useState, useEffect } from 'react'
-import {FaTimes} from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 import { db } from "../../firebase/config";
 import { Link } from 'react-router-dom';
 import { collection, query, doc, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
@@ -14,32 +14,33 @@ const Tracking = () => {
   const q = query(collection(db, "tracking"));
 
   useEffect(() => {
-      try {
-        onSnapshot(q, (querySnapshot) => {
-            if (querySnapshot.empty) {
-              setError('Sorry, we couldn\'t find that tracking number.')
-              setLoading(false)
-            } else {
-              const data = querySnapshot.docs.map(doc => ({
-                id: doc.id
-              }))
-              console.log("data", data)
-              setTrackingList(data)
-            }
-          })
-      } catch (err) {
-        setError(err.message)
-        setLoading(false)
-      }
+    try {
+      onSnapshot(q, (querySnapshot) => {
+        if (querySnapshot.empty) {
+          setError('Sorry, we couldn\'t find that tracking number.')
+          setLoading(false)
+        } else {
+          const data = querySnapshot.docs.map(doc => ({
+            id: doc.id
+          }))
+          console.log("data", data)
+          setTrackingList(data)
+        }
+      })
+    } catch (err) {
+      setError(err.message)
+      setLoading(false)
+    }
   }, [])
 
   const [trackingId, setTrackingId] = useState("")
-  const [trackingInfo, setTrackingInfo] = useState("")
+  const [clientDetails, setClientDetails] = useState("")
 
+  // add id
   const addID = async (e) => {
     e.preventDefault()
 
-    if (trackingId === "" || trackingInfo === "") {
+    if (trackingId === "" || clientDetails === "") {
       setError("Please fill both info.")
       alert("Please fill both info.")
       return
@@ -47,10 +48,16 @@ const Tracking = () => {
     // add current id to firestore
     const ref = doc(db, "tracking", trackingId)
 
-    await setDoc(ref, {"shipping": [], "trackingInfo": trackingInfo })
+    await setDoc(ref, {
+      "shipping": [],
+      "packaging": [],
+      "extra": [],
+      "clientDetails": clientDetails
+    })
     setTrackingId("")
   }
 
+  // delete id
   const deleteTracking = async (id) => {
     // prompt user to confirm delete
     const confirm = window.confirm("Are you sure you want to delete this tracking number?")
@@ -58,7 +65,7 @@ const Tracking = () => {
       // delete from firestore
       console.log(id)
       const ref = doc(db, "tracking", id)
-      await deleteDoc(ref)  
+      await deleteDoc(ref)
     } else {
       return
     }
@@ -78,9 +85,9 @@ const Tracking = () => {
 
         <input
           type="text"
-          value={trackingInfo}
-          onChange={(e) => setTrackingInfo(e.target.value)}
-          placeholder="Delivery Information" />
+          value={clientDetails}
+          onChange={(e) => setClientDetails(e.target.value)}
+          placeholder="clientDetails" />
         <button
           onClick={(e) => addID(e)}
           type="submit">Add ID</button>

@@ -1,0 +1,37 @@
+@import "../sass/_variables.scss";
+@import "../sass/_mixin.scss";
+
+
+.id-container {
+  .tracking-div {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+
+  }
+
+  .track-id-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .tracking-info-extra {
+    font-weight: bold;
+  }
+
+  span {
+    display: block;
+    font-weight: 400;
+    margin: .5rem 0 1rem 0;
+  }
+
+  .track-heading {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+}

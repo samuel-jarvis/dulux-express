@@ -11,15 +11,15 @@
   margin: auto;
 
   input {
-    height: 50px;
+    // height: 50px;
     border: 1px solid $orange;
-    padding: 0 20px;
-    font-size: 1.6rem;
+    padding: 0 15 px;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
 
   button {
-    height: 50px;
+    height: 30px;
     border: 1px solid $orange;
     padding: 0 18px;
     font-size: 1.6rem;
@@ -100,4 +100,46 @@
 
 .back_link {
   font-size: 1.4rem;
+}
+
+.extraForm {
+  display: flex;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $orange;
+    color: white;
+  }
+}
+
+.extra_text {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+
+  p {
+    margin-bottom: 1rem;
+  }
 }

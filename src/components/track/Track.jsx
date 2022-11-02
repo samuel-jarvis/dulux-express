@@ -3,15 +3,18 @@ import "./track.scss"
 import { useState } from 'react'
 import { db } from "../../firebase/config";
 import { collection, query, getDocs } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 
 const Track = ({ handleModal, setData, setError, setLoading }) => {
   const [trackingID, setTrackingID] = useState("")
+  const navigate = useNavigate()
 
   const handleSearch = () => {
     if (trackingID === "") {
       alert("Please enter a tracking ID")
       return
     }
+
 
     const fetchData = async () => {
       try {
@@ -32,7 +35,8 @@ const Track = ({ handleModal, setData, setError, setLoading }) => {
           console.log(tracking)
           if (tracking) {
             setData(tracking)
-            handleModal()
+            navigate(`/track-order/${tracking.id}`)
+            // handleModal()
             setLoading(false)
           } else {
             setData({ id: "", shipping: [] })

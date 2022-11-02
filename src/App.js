@@ -11,6 +11,7 @@ import TrackDetails from './dashboard/TrackDetails/TrackDetails';
 import Login from './dashboard/Login/Login';
 
 import { useAuthContext } from './context/useAuthContext';
+import TrackOrder from './pages/TrackOrder';
 
 const App = () => {
 	const { user } = useAuthContext();
@@ -23,6 +24,7 @@ const App = () => {
 				<Route path="/track-shipment" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/contact" element={<Contact />} />
+				<Route path="/track-order/:id" element={<TrackOrder />} />
 				<Route path="admin/login" element={user ? <Tracking /> : <Login />} />
 				<Route
 					path="admin/tracking"
