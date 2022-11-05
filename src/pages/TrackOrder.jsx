@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 import { db } from '../firebase/config';
 import { useState, useEffect } from 'react';
 import './trackorder.scss';
-import { Link } from 'react-router-dom';
-import { collection, query, doc, setDoc, onSnapshot } from 'firebase/firestore';
+import { collection, query, doc, onSnapshot } from 'firebase/firestore';
 
 
 const TrackOrder = () => {
@@ -34,7 +33,7 @@ const TrackOrder = () => {
       setError(err.message);
       setLoading(false);
     }
-  }, []);
+  }, [id]);
 
 
   return (
@@ -43,7 +42,10 @@ const TrackOrder = () => {
       <div className="container">
         <div className="tracking-div">
           <p className="track-heading">
-            Delivery Info
+            Delivery Info:
+          </p>
+          <p className='delivery_details'>
+            {trackingData?.clientDetails}
           </p>
 
           {
