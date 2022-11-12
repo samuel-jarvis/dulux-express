@@ -22,10 +22,10 @@ const Footer = () => {
             Address:
             <span className="orange"> 13600 SW 288th St, Homestead, FL 33033</span>
           </p>
-          <p>
+          {/* <p>
             Phone:
             <span className="orange"> +1 (862) 397‑6064</span>
-          </p>
+          </p> */}
           <p>
             Email:
             <span className="orange"> duluxexpress@gmail.com</span>
